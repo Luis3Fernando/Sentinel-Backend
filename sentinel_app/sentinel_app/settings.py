@@ -79,8 +79,8 @@ DATABASES = {
         "NAME": "robos_db",
         "USER": "robos_user",
         "PASSWORD": "robos_pass",
-        "HOST": "postgres",
-        "PORT": "5432",
+        "HOST": "127.0.0.1",
+        "PORT": "55432",
     }
 }
 
