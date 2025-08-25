@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-kz^c0_7q!x&ai0p=s2!ngy+sp=v=12c=$ot@20uv9#cx+t0lxj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'rest_framework',
     'robos',
 ]
 
@@ -70,6 +71,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "sentinel_app.wsgi.application"
 
 
+
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
@@ -80,7 +82,7 @@ DATABASES = {
         "USER": "robos_user",
         "PASSWORD": "robos_pass",
         "HOST": "127.0.0.1",
-        "PORT": "55432",
+        "PORT": "15432",
     }
 }
 
@@ -103,7 +105,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
